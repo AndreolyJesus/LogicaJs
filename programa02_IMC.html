@@ -1,0 +1,37 @@
+<script>
+	
+function pulaLinha() {
+
+		document.write("<br>");     //<---- como deve ficar: --> pulaLinha();
+		document.write("<br>");		// incremento apos linha
+
+	}
+
+	function mostra(exibeFrase) {
+
+		document.write(exibeFrase);
+		pulaLinha();				//<-----executando uma função dentro da outra.	
+	}
+
+	function calculaImc(altura,peso) {
+
+		var imc = peso / (altura * altura);
+		mostra("O IMC calculado é: " + imc);
+	}
+
+var pesoAndre = 64;
+var alturaAndre = 1.65;
+calculaImc(64,1.65);
+
+//var imcAndre = pesoAndre / (pesoAndre * pesoAndre);
+//mostra ("O IMC de André é: " + imcAndre);			<--sem necessidade(metodo criado para isso!)
+
+var pesoAmigo = 73;
+var alturaAmigo = 1.71;
+calculaImc(pesoAmigo,alturaAmigo);
+
+//var imcAmigo = pesoAmigo / (pesoAmigo * pesoAmigo);
+//mostra("O peso do Amigo é :" + imcAmigo);	
+
+
+</script>

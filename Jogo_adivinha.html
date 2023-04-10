@@ -1,0 +1,27 @@
+
+<script>
+	
+function pulaLinha() {
+
+		document.write("<br>");     
+		document.write("<br>");		
+
+	}
+
+	function mostra(exibeFrase) {
+
+		document.write(exibeFrase);
+		pulaLinha();				
+	}
+
+    var numeroPensado = Math.round(Math.random() * 10);     //multiplica numero de 1 a 10
+    var chute = parseInt(prompt("Digite seu chute"));
+
+    if(chute==numeroPensado){
+        document.write("Voce acertou");
+    }
+    else {
+        document.write("Voce errou, o numero pensado foi" + numeroPensado);
+    }
+
+</script>    
