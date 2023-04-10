@@ -1,0 +1,26 @@
+
+
+<script>
+	
+    function pulaLinha() {                  //<--metodo pula linha, para definir espaços
+    
+            document.write("<br>");     
+            document.write("<br>");		
+    
+        }
+    
+        function mostra(exibeFrase) {       //<--metodo deexibição
+    
+            document.write(exibeFrase);
+            pulaLinha();				
+        }
+
+        // <-- inicializa dentro do for  dividido em 3 partes: variavel, condição de repetição, incremento da variavel.
+
+        for(var multiplicador = 1; multiplicador <= 10; multiplicador +1) {         //<--ou (multiplicador++) que é um pos incremento         
+            mostra( 7 * multiplicador );                                                
+}
+mostra(fim);  
+
+
+</script>
