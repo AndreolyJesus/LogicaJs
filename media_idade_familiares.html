@@ -1,0 +1,45 @@
+
+
+<script>
+	
+    function pulaLinha() {                  //<--metodo pula linha, para definir espaços
+    
+            document.write("<br>");     
+            document.write("<br>");		
+    
+        }
+    
+        function mostra(exibeFrase) {       //<--metodo deexibição
+    
+            document.write(exibeFrase);
+            pulaLinha();				
+        }
+/*
+    var idadePedro = 28;
+    var idadeMarta = 32;
+    var idadeJorge = 60;
+    var idadeBeth = 22;
+    
+    var totalIdades = (idadePedro+idadeMarta+idadeJorge+idadeBeth);     //<--somas das variaveis trazendo resultado
+    var mediaIdades = totalIdades/4;                                    //<--total das idades dividido por 4
+
+    */
+   
+   //outra forma usando varias quantidades
+   //ex: quantidade de familiares 3                <--quantidade equivalente ao que programa vai ler
+   var numero = 1;//<--iniciandi variavel
+   var totalIdades = 0;
+   var totalFamiliares = parseInt( prompt("Quantidade de familiares "));
+                                                 
+    while (numero <= totalFamiliares) {                         //<--condição
+    var idade = parseInt( prompt("Informe a idade do familiar"));
+    totalIdades = totalIdades + idade;
+    numero++;
+    }
+
+    var mediaIdades = totalIdades/totalFamiliares;
+    mostra("A media das idades dos familiares é" + mediaIdades);
+    mostra("fim");
+
+
+</script>
