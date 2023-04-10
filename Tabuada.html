@@ -1,0 +1,23 @@
+
+
+<script>
+	
+    function pulaLinha() {                  //<--metodo pula linha, para definir espaços
+    
+            document.write("<br>");     
+            document.write("<br>");		
+    
+        }
+    
+        function mostra(exibeFrase) {       //<--metodo deexibição
+    
+            document.write(exibeFrase);
+            pulaLinha();				
+        }
+var multiplicador = 1;                      //<--iniciando variavel
+
+while(multiplicador <= 10){                //<--estrutura condicional, que fará o loop de contagem ate a condição <=10
+    mostra( 7 * multiplicador);
+    multiplicador = multiplicador +1;       //<--incluir o contador para fazer a contagem
+}   
+mostra(fim);                                //<--apos sair da condição (while) essa linha sera executada finalizando     
