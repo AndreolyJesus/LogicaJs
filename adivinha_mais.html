@@ -3,17 +3,65 @@
 <button>Compare com o numero pensado</button>
 
 <script>
- 
-var segredo = Math.round(Math.random() * 10);        //<--inicializando com as variaveis geradas automaticas
-var input = document.querySelector("input");
-input.focus();      //<--pra assim que carregar pagina ja deixar acessivel
-function verifica () {      //<--função executa
 
-    if(input.value == segredo){     //<--capturando valor "input" do html
-        alert("voce acertou");
-    }else {
-        alert("voce errou!!");
+    function sorteia (){
+
+        return Math.round(Math.random() * 10);
     }
+
+    function sorteiaNumeros (quantidade){
+        var segredos = [];
+        var numero = 1;
+
+        while(numero <= quantidade){                //<--vai receber a quantidade de numeros aleatorios e retorna resultado da lista de segredos
+
+            var numeroAleatorio = sorteia(3);
+
+            if(numeroAleatorio != 0){                       //<--pra nao gerar o zero
+            
+                var achou = false;
+    
+                for(var posicao = 0; posicao < segredos.length; posicao++){
+    
+                    if(segredos[posicao] == numeroAleatorio){
+                        achou = true;
+                        break;
+                    }
+                }
+    
+                if(achou == false){
+    
+                    segredos.push(sorteia());
+                    numero++;
+                }
+            }
+        }
+        return segredos;
+    }
+ 
+//var segredo = Math.round(Math.random() * 10);        //<--inicializando com as variaveis geradas automaticas
+var segredos = sorteiaNumeros(5);         
+console.log(segredos);                     //<--para adicionar uma lista
+
+var input = document.querySelector("input");
+input.focus();  
+    //<--pra assim que carregar pagina ja deixar acessivel
+    function verifica () {      //<--função executa
+
+
+        var achou = false;
+    for(var posicao = 0; posicao < segredos.length; posicao ++){        //<--length, diz a quantidade da lista automatico
+        if (input.value == segredos[posicao])  {   //<--capturando valor "input" do html
+
+        alert("voce acertou");
+        achou = true;
+        break;        
+        }
+    }
+        if(achou==false){        
+        alert("voce errou");//<--se caso errar exibir logo e sair da quantidade de tentativas
+    }
+
     input.value = "";       //<--para poder limpar o campo digitavel automatico
     input.focus();      //<--ja deixa no ponto para digitar novamente
 }
