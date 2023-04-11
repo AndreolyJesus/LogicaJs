@@ -1,0 +1,23 @@
+
+<input/>
+<button>Compare com o numero pensado</button>
+
+<script>
+ 
+var segredo = Math.round(Math.random() * 10);        //<--inicializando com as variaveis geradas automaticas
+var input = document.querySelector("input");
+input.focus();      //<--pra assim que carregar pagina ja deixar acessivel
+function verifica () {      //<--função executa
+
+    if(input.value == segredo){     //<--capturando valor "input" do html
+        alert("voce acertou");
+    }else {
+        alert("voce errou!!");
+    }
+    input.value = "";       //<--para poder limpar o campo digitavel automatico
+    input.focus();      //<--ja deixa no ponto para digitar novamente
+}
+var button = document.querySelector ("button");
+button.onclick = verifica;    
+
+</script>
